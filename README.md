@@ -87,12 +87,32 @@ ollama serve
 
 ## Usage
 
+### Build and Install
+
+First, build the project and link it globally:
+
+```bash
+npm run build
+npm link
+```
+
+After linking, you can use the `rag` command from anywhere on your system.
+
 ### Development Mode
 
-During development, use `npm run dev` instead of the installed `rag` command:
+For development without rebuilding, use `npm run dev`:
 
 ```bash
 npm run dev -- <command>
+```
+
+Examples:
+
+```bash
+npm run dev -- init
+npm run dev -- add README.md
+npm run dev -- "how do I index files?"
+npm run dev -- ask "what are the features?"
 ```
 
 ### Commands
@@ -102,7 +122,7 @@ npm run dev -- <command>
 Set up RAG CLI configuration in your home directory:
 
 ```bash
-npm run dev -- init
+rag init
 ```
 
 This command will:
@@ -120,13 +140,13 @@ Index files or directories:
 
 ```bash
 # Index a single file (use README.md for testing to learn about RAG CLI)
-npm run dev -- add README.md
+rag add README.md
 
 # Index a directory
-npm run dev -- add ./docs
+rag add ./docs
 
 # Index multiple paths
-npm run dev -- add ./docs ./notes/auth.md
+rag add ./docs ./notes/auth.md
 ```
 
 The command will:
@@ -143,7 +163,7 @@ The command will:
 View indexing statistics:
 
 ```bash
-npm run dev -- status
+rag status
 ```
 
 Output:
@@ -167,10 +187,10 @@ Clear all index data to start fresh:
 
 ```bash
 # Show warning and require confirmation
-npm run dev -- clear
+rag clear
 
 # Clear without confirmation
-npm run dev -- clear --force
+rag clear --force
 ```
 
 The command will:
@@ -185,17 +205,20 @@ The command will:
 Search for relevant document chunks and get AI-powered answers:
 
 ```bash
-# Ask a question (streaming by default)
-npm run dev -- ask "how do I index files?"
+# Quick ask (shortcut - no 'ask' keyword needed)
+rag "how do I index files?"
+
+# Ask with explicit command
+rag ask "how do I index files?"
 
 # Ask without streaming
-npm run dev -- ask "what are the features?" --no-stream
+rag ask "what are the features?" --no-stream
 
 # Ask without LLM (chunk-only mode)
-npm run dev -- ask "how do I index files?" --no-llm
+rag ask "how do I index files?" --no-llm
 
 # Customize number of chunks to retrieve
-npm run dev -- ask "what are the features?" --top-k 10
+rag ask "what are the features?" --top-k 10
 ```
 
 The command will:
