@@ -6,6 +6,12 @@ Local-first Retrieval-Augmented Generation CLI for personal documentation.
 
 RAG CLI allows you to index your markdown, text, and PDF files and perform semantic search using vector embeddings. All embeddings are generated locally using @xenova/transformers - no API keys required.
 
+## Demo
+
+Watch a quick demo of RAG CLI in action:
+
+![Demo Video](0522.mp4)
+
 ## Features
 
 - ✅ Index markdown, text, and PDF files
