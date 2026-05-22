@@ -10,7 +10,7 @@ RAG CLI allows you to index your markdown, text, and PDF files and perform seman
 
 Watch a quick demo of RAG CLI in action:
 
-![Demo Video](https://github.com/satoshiman/rag-cli/raw/refs/heads/main/demo.mp4)
+[Demo Video](demo.mp4)
 
 ## Features
 
